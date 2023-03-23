@@ -876,13 +876,6 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
 			});
 			return false;
 		}
-
-		document.addEventListener('click', function (e) {
-			const venda = e.target.closest('.venda')
-			if (venda.classList.contains('venda')) {
-				gtag_report_conversion(venda.attribures.href)
-			}
-		})
 	</script>
 
 
