@@ -858,51 +858,32 @@
 			y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
 		})(window, document, "clarity", "script", "g98028xumo");
 	</script>
-	<!-- Event snippet for 6 FRASCOS EXTRAS conversion page
+	<!-- Event snippet for Compra conversion page
 In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. -->
 	<script>
-		function gtag_report_conversion(url, quant) {
+		function gtag_report_conversion(url) {
 			var callback = function () {
 				if (typeof (url) != 'undefined') {
 					window.location = url;
 				}
 			};
-			quant === 'seisFrascos' && gtag('event', 'conversion', {
-				'send_to': 'AW-11100801183/2kPrCO2-1pMYEJ-Ro60p',
-				'value': 697.0,
+			gtag('event', 'conversion', {
+				'send_to': 'AW-11100801183/3rwiCPyB4JMYEJ-Ro60p',
+				'value': 1.0,
 				'currency': 'BRL',
 				'event_callback': callback
 			});
-			quant === 'doisFrascos' && gtag('event', 'conversion', {
-				'send_to': 'AW-11100801183/OtkxCPC-1pMYEJ-Ro60p',
-				'value': 397.0,
-				'currency': 'BRL',
-				'event_callback': callback
-			});
-			quant === 'umFrascos' && gtag('event', 'conversion', {
-				'send_to': 'AW-11100801183/T3ZTCPO-1pMYEJ-Ro60p',
-				'value': 297.0,
-				'currency': 'BRL',
-				'event_callback': callback
-			});
-			quant === 'semFrascos' && gtag('event', 'conversion', {
-				'send_to': 'AW-11100801183/w772CPa-1pMYEJ-Ro60p',
-				'value': 197.0,
-				'currency': 'BRL',
-				'event_callback': callback
-			});
-
 			return false;
 		}
 
 		document.addEventListener('click', function (e) {
 			const venda = e.target.closest('.venda')
 			if (venda.classList.contains('venda')) {
-				gtag_report_conversion(venda.attribures.href, venda.dataset.event)
+				gtag_report_conversion(venda.attribures.href)
 			}
 		})
-
 	</script>
+
 
 </head>
 
