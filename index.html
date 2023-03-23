@@ -925,10 +925,10 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
 		document.addEventListener('click', function (e) {
 			const venda = e.target.closest('.venda')
 			if (venda.classList.contains('venda')) {
-				venda.dataset.event === 'seisFrascos' && gtag_report_conversionSeis(url)
-				venda.dataset.event === 'doisFrascos' && gtag_report_conversionDois(url)
-				venda.dataset.event === 'umFrascos' && gtag_report_conversionUm(url)
-				venda.dataset.event === 'semFrascos' && gtag_report_conversionSem(url)
+				venda.dataset.event === 'seisFrascos' && gtag_report_conversionSeis(venda.attribures.href)
+				venda.dataset.event === 'doisFrascos' && gtag_report_conversionDois(venda.attribures.href)
+				venda.dataset.event === 'umFrascos' && gtag_report_conversionUm(venda.attribures.href)
+				venda.dataset.event === 'semFrascos' && gtag_report_conversionSem(venda.attribures.href)
 			}
 		})
 
