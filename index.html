@@ -861,74 +861,44 @@
 	<!-- Event snippet for 6 FRASCOS EXTRAS conversion page
 In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. -->
 	<script>
-		function gtag_report_conversionSeis(url) {
+		function gtag_report_conversion(url, quant) {
 			var callback = function () {
 				if (typeof (url) != 'undefined') {
 					window.location = url;
 				}
 			};
-			gtag('event', 'conversion', {
+			quant === 'seisFrascos' && gtag('event', 'conversion', {
 				'send_to': 'AW-11100801183/2kPrCO2-1pMYEJ-Ro60p',
 				'value': 697.0,
 				'currency': 'BRL',
 				'event_callback': callback
 			});
-			return false;
-		}
-
-
-		function gtag_report_conversionDois(url) {
-			var callback = function () {
-				if (typeof (url) != 'undefined') {
-					window.location = url;
-				}
-			};
-			gtag('event', 'conversion', {
+			quant === 'doisFrascos' && gtag('event', 'conversion', {
 				'send_to': 'AW-11100801183/OtkxCPC-1pMYEJ-Ro60p',
 				'value': 397.0,
 				'currency': 'BRL',
 				'event_callback': callback
 			});
-			return false;
-		}
-
-		function gtag_report_conversionUm(url) {
-			var callback = function () {
-				if (typeof (url) != 'undefined') {
-					window.location = url;
-				}
-			};
-			gtag('event', 'conversion', {
+			quant === 'umFrascos' && gtag('event', 'conversion', {
 				'send_to': 'AW-11100801183/T3ZTCPO-1pMYEJ-Ro60p',
 				'value': 297.0,
 				'currency': 'BRL',
 				'event_callback': callback
 			});
-			return false;
-		}
-
-		function gtag_report_conversionSem(url) {
-			var callback = function () {
-				if (typeof (url) != 'undefined') {
-					window.location = url;
-				}
-			};
-			gtag('event', 'conversion', {
+			quant === 'semFrascos' && gtag('event', 'conversion', {
 				'send_to': 'AW-11100801183/w772CPa-1pMYEJ-Ro60p',
 				'value': 197.0,
 				'currency': 'BRL',
 				'event_callback': callback
 			});
+
 			return false;
 		}
 
 		document.addEventListener('click', function (e) {
 			const venda = e.target.closest('.venda')
 			if (venda.classList.contains('venda')) {
-				venda.dataset.event === 'seisFrascos' && gtag_report_conversionSeis(venda.attribures.href)
-				venda.dataset.event === 'doisFrascos' && gtag_report_conversionDois(venda.attribures.href)
-				venda.dataset.event === 'umFrascos' && gtag_report_conversionUm(venda.attribures.href)
-				venda.dataset.event === 'semFrascos' && gtag_report_conversionSem(venda.attribures.href)
+				gtag_report_conversion(venda.attribures.href, venda.dataset.event)
 			}
 		})
 
@@ -3084,8 +3054,7 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
 													<a class="venda elementor-button-link elementor-button elementor-size-sm elementor-animation-shrink"
 														href="https://ev.braip.com/ref?pl=plal9mqo&ck=chednwnv&af=afij748ym"
 														rel="noreferrer noopener nofollow external" target="_blank"
-														data-event="doisFrascos"
-														role="button"><span
+														data-event="doisFrascos" role="button"><span
 															class="elementor-button-content-wrapper"><span
 																class="elementor-button-text">COMPRAR
 																AGORA</span></span></a>
@@ -3166,8 +3135,7 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
 													<a class="venda elementor-button-link elementor-button elementor-size-sm elementor-animation-shrink"
 														href="https://ev.braip.com/ref?pl=plaxp9dv&ck=chednwnv&af=afij748ym"
 														rel="noreferrer noopener nofollow external" target="_blank"
-														data-event="umFrascos"
-														role="button"><span
+														data-event="umFrascos" role="button"><span
 															class="elementor-button-content-wrapper"><span
 																class="elementor-button-text">COMPRAR
 																AGORA</span></span></a>
@@ -3247,8 +3215,7 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
 													<a class="venda elementor-button-link elementor-button elementor-size-sm elementor-animation-shrink"
 														href="https://ev.braip.com/ref?pl=pla2gpen&ck=chednwnv&af=afij748ym"
 														rel="noreferrer noopener nofollow external" target="_blank"
-														data-event="semFrascos"
-														role="button"><span
+														data-event="semFrascos" role="button"><span
 															class="elementor-button-content-wrapper"><span
 																class="elementor-button-text">COMPRAR
 																AGORA</span></span></a>
