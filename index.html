@@ -860,7 +860,7 @@
 		})(window, document, "clarity", "script", "g98028xumo");
 	</script>
 	<!-- Event snippet for Compra conversion page
-In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. -->
+I	n your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. -->
 	<script>
 		function gtag_report_conversion(url) {
 			var callback = function () {
@@ -3837,6 +3837,16 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
 				panel.classList.contains("elementor-active") ? panel.style.display = "block" : panel.style.display = "none";
 			});
 		});
+	</script>
+	<script>
+		var buttons = document.querySelectorAll('a[href*="https://ev.braip.com/"]');
+		for (var i = 0; i < buttons.length; i++) {
+			buttons[i].addEventListener('click', function (event) {
+				event.preventDefault();
+				gtag_report_conversion(this.href);
+				return false;
+			});
+		}
 	</script>
 </body>
 
