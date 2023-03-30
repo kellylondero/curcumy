@@ -4070,6 +4070,20 @@ I	n your html page, add the snippet and call gtag_report_conversion when someone
 			});
 		}
 	</script>
+	<script>
+		function sendWhatsAppEvent() {
+		  gtag('event', 'click', {
+			'event_category': 'button',
+			'event_label': 'whatsapp'
+		  });
+		}
+	  
+		var buttons = document.querySelectorAll('a[href="https://wa.me/"]');
+	  
+		for (var i = 0; i < buttons.length; i++) {
+		  buttons[i].addEventListener('click', sendWhatsAppEvent);
+		}
+	  </script>
 </body>
 
 </html>
