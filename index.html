@@ -4072,18 +4072,22 @@ I	n your html page, add the snippet and call gtag_report_conversion when someone
 	</script>
 	<script>
 		function sendWhatsAppEvent() {
-		  gtag('event', 'click', {
-			'event_category': 'button',
-			'event_label': 'whatsapp'
-		  });
+			gtag('event', 'whatsapp', {
+				'event_category': 'button',
+				'event_label': 'whatsapp',
+				"link_classes": "",
+				"link_url": "https://wa.me/5562986068383?text=Quero%20conhecer%20o%20" +
+					"curcumy",
+				"link_domain": "wa.me",
+			});
 		}
-	  
+
 		var buttons = document.querySelectorAll('a[href="https://wa.me/"]');
-	  
+
 		for (var i = 0; i < buttons.length; i++) {
-		  buttons[i].addEventListener('click', sendWhatsAppEvent);
+			buttons[i].addEventListener('click', sendWhatsAppEvent);
 		}
-	  </script>
+	</script>
 </body>
 
 </html>
